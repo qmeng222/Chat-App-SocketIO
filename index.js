@@ -14,9 +14,12 @@ const { Server } = require("socket.io");
 // create a new instance of the Server class (on backend), and initialize it with the expressServer instance:
 const io = new Server(expressServer);
 
-// listen for and handle connection events on the Socket.IO server (a server-side library):
+// listen for and handle events on the Socket.IO server (a server-side library):
 io.on("connection", (socket) => {
-  console.log("New user connected.");
+  // console.log("New user connected.");
+  socket.on("chat", (msg) => {
+    console.log(msg);
+  });
 });
 
 app.get("/", (req, res) => {
