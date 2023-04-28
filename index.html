@@ -6,16 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket Chat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Live Chat Socket.IO</h1>
+    <center><h2>Live Chat Socket.IO</h2></center>
+    <br />
+
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-12 col-lg-6">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-12 col-lg-6">
+          <div class="input-group">
+            <input id="msg" class="form-control" type="text" />
+            <button onclick="sendMsg()" class="btn btn-info">Send Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- include the client-side Socket.IO library in HTML: -->
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-      // initialize a Socket.IO client instance (to communicate with the Socket.IO server):
+      // initialize a Socket.IO client instance using the io() method provided by the Socket.IO library (NOTE: io is the default namespace used by Socket.IO):
       let socket = io();
+      function sendMsg() {
+        let msg = document.getElementById("msg").value;
+        alert(msg);
+      }
     </script>
   </body>
 </html>
