@@ -19,18 +19,18 @@
     ></script>
   </head>
   <body>
-    <center><h2>Live Chat Socket.IO</h2></center>
-    <br />
+    <!-- <center><h2>Live Chat Socket.IO</h2></center> -->
+    <h2 id="msg"></h2>
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-md-6 col-12 col-lg-6">
           <ul id="msgHistory"></ul>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-md-6 col-12 col-lg-6">
           <div class="input-group">
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- include the client-side Socket.IO library in HTML: -->
     <script src="/socket.io/socket.io.js"></script>
@@ -48,21 +48,25 @@
       // initialize a Socket.IO client instance using the io() method provided by the Socket.IO library (NOTE: io is the default namespace used by Socket.IO):
       let socket = io();
 
-      function sendMsg() {
-        let msg = document.getElementById("msg").value;
-        // alert(msg);
-        socket.emit("chat", msg);
-        document.getElementById("msg").value = "";
-      }
-
-      socket.on("chat_send", (msg) => {
-        let listItem = document.createElement("li");
-        listItem.textContent = msg;
-
-        let msgHisory = document.getElementById("msgHistory");
-
-        msgHistory.appendChild(listItem);
+      socket.on("napping", (data) => {
+        document.getElementById("msg").innerHTML = data;
       });
+
+      // function sendMsg() {
+      //   let msg = document.getElementById("msg").value;
+      //   // alert(msg);
+      //   socket.emit("chat", msg);
+      //   document.getElementById("msg").value = "";
+      // }
+
+      // socket.on("chat_send", (msg) => {
+      //   let listItem = document.createElement("li");
+      //   listItem.textContent = msg;
+
+      //   let msgHisory = document.getElementById("msgHistory");
+
+      //   msgHistory.appendChild(listItem);
+      // });
     </script>
   </body>
 </html>
