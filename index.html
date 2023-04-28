@@ -48,7 +48,7 @@
       // initialize a Socket.IO client instance using the io() method provided by the Socket.IO library (NOTE: io is the default namespace used by Socket.IO):
       let socket = io();
 
-      socket.on("napping", (data) => {
+      socket.on("cooking", (data) => {
         document.getElementById("msg").innerHTML = data;
       });
 
