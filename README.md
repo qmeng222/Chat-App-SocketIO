@@ -1,5 +1,13 @@
 # Chat-App-SocketIO
 
+## Introduction:
+
+- Purpose: This project serves as a warmup for my larger MERN stack real-time chat application, where I'll be using React, Express, and MongoDB.
+- Tech: In this project, I'll be utilizing Socket.IO to create a simple chat application that allows real-time bidirectional communication between client(s) and server. Socket.IO provides a fast and reliable real-time engine that will enable my chat app to handle many simultaneous connections with low latency.
+- Features:
+  - [x] Real-time individual chat and chat rooms, allowing users to have direct and private conversations.
+  - [x] Headcount in each chat room, which allows users to know how many people are currently in a particular chat room, helping them decide whether or not to join.
+
 ## Setup:
 
 1. `npm init -y` to create a new `package.json` file with default values for all fields
